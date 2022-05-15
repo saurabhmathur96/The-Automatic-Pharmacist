@@ -14,6 +14,7 @@ symptom(diarrhea).
 symptom(itchy_skin).
 symptom(red_skin).
 symptom(infected_skin).
+symptom(body_ache).
 
 ailment(common_cold).
 ailment(flu).
@@ -114,8 +115,8 @@ should_take(P, M) :- person(P), medicine(M), has_ailment(P, A), treats(M, A), ca
 should_take(P, M) :- person(P), medicine(M), has_symptom(P, S), treats(M, S), can_take(P, M).
 
 
-has_symptom(user, infected_skin).
+has_symptom(user, fever).
 existing(user, alcohol).
 existing(user, pregnancy).
 person(user).
-?-should_take(user, X).
+?- should_take(user,Medicine).

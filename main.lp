@@ -14,6 +14,7 @@ symptom(diarrhea).
 symptom(itchy_skin).
 symptom(red_skin).
 symptom(infected_skin).
+symptom(body_ache).
 
 ailment(common_cold).
 ailment(flu).
@@ -103,7 +104,6 @@ has_ailment(P, rash) :- person(P), has_symptom(P, infected_skin).
 
 % can_take(P, M) : person P can take medicine M
 can_take(P, M) :- person(P), medicine(M), not -can_take(P, M).
-can_take(P, M) :- person(P), medicine(M), not -can_take(P, M).
 
 % -can_take(P, M) : exception case - person P cannot take medicine M
 -can_take(P, M) :- person(P), factor(X), existing(P, X), adverse_interaction(M, X).
@@ -116,16 +116,6 @@ should_take(P, M) :- person(P), medicine(M), has_symptom(P, S), treats(M, S), ca
 
 
 person(alice).
-
-%medicine(sugar).
-%treats(sugar, _).
-existing(alice, alcohol).
-%existing(alice, pregnancy).
-%can_take(alice, sugar).
-
-has_symptom(alice, fever).
-
-
-
-%?- has_ailment(alice, X).
-?- should_take(alice, X).
+has_symptom(alice, red_eyes).
+has_symptom(alice, watery_eyes). 
+?- has_ailment(alice, A).

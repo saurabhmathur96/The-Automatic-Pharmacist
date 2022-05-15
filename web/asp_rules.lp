@@ -14,6 +14,7 @@ symptom(diarrhea).
 symptom(itchy_skin).
 symptom(red_skin).
 symptom(infected_skin).
+symptom(body_ache).
 
 ailment(common_cold).
 ailment(flu).
