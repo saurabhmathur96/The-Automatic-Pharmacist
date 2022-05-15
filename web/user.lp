@@ -114,18 +114,8 @@ should_take(P, M) :- person(P), medicine(M), has_ailment(P, A), treats(M, A), ca
 should_take(P, M) :- person(P), medicine(M), has_symptom(P, S), treats(M, S), can_take(P, M).
 
 
-
-person(alice).
-
-%medicine(sugar).
-%treats(sugar, _).
-existing(alice, alcohol).
-%existing(alice, pregnancy).
-%can_take(alice, sugar).
-
-has_symptom(alice, fever).
-
-
-
-%?- has_ailment(alice, X).
-?- should_take(alice, X).
+has_symptom(user, infected_skin).
+existing(user, alcohol).
+existing(user, pregnancy).
+person(user).
+?-should_take(user, X).
